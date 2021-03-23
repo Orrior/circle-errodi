@@ -13,7 +13,6 @@ def circle():
     """
     Calculate area and circumreference, then return answer.
     """
-    pi = 3.1415  # I don't want to import math
     if str(radius.get()).isdigit():
         if radius.get() >= 0:
             area = Label(window, text=f"Area:{calculate_area(float(radius.get()))}\n"
