@@ -1,6 +1,14 @@
 from tkinter import *
 
 
+def calculate_area(circle_radius: float):
+    return round((3.1415 * circle_radius ** 2), 2)
+
+
+def calculate_circumreference(circle_radius: float):
+    return round(3.1415 * circle_radius * 2, 2)
+
+
 def circle():
     """
     Calculate area and circumreference, then return answer.
@@ -8,8 +16,8 @@ def circle():
     pi = 3.1415  # I don't want to import math
     if str(radius.get()).isdigit():
         if radius.get() >= 0:
-            area = Label(window, text=f"Area:{round((pi * float(radius.get()) ** 2), 2)}\n"
-                                      f"Circumreference:{round(pi * float(radius.get()) * 2, 2)}", justify=LEFT)
+            area = Label(window, text=f"Area:{calculate_area(float(radius.get()))}\n"
+                                      f"Circumreference:{calculate_circumreference(float(radius.get()))}", justify=LEFT)
             area.grid(column=0, row=1)  # position of answer text
 
 
